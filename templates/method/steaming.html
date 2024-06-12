@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block head %}
+    {{super() }}
+{% endblock %}
+
+    {% block header %}
+        <h1>Logo</h1>
+    {% endblock %}
+
+    {% block nav %}
+        <a href="/">Home</a>
+        <a href="/steaming" class="active">Steaming</a>
+        <a href="/frying">Frying</a>
+        <a href="/raw">Raw</a>
+        <a href="/grilling">Grilling</a>
+        <a href="/baking">Baking</a>
+        <a href="/poaching">Poaching</a>
+        <a href="/barbecuing">Barbecuing</a>
+        <a href="/boiling">Boiling</a>
+    {% endblock %}
+    
+    {% block textbox %}
+    <h3>text</h3>
+    {% endblock %}
+
+    {% block table %}
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Image</th>
+        </tr>
+
+        <tr>
+            <td>{{row[0]}}</td>
+        </tr>
+        <tr>
+            <td>{{row[1]}}</td>
+        </tr>
+        <tr>
+            <td>{{row[2]}}</td>
+        </tr>
+        <tr>
+            <td>{{row[3]}}</td>
+        </tr>
+        
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+
