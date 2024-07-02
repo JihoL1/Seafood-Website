@@ -4,7 +4,7 @@
 {% endblock %}
 
     {% block header %}
-        <h1>Logo</h1>
+        <a href="/"><img src="/static/images/logo.png" alt="Logo" class="header_logo"></a>
     {% endblock %}
 
     {% block nav %}
@@ -20,31 +20,22 @@
     {% endblock %}
     
     {% block textbox %}
-    <h3>text</h3>
-    {% endblock %}
 
+    {% endblock %}
     {% block table %}
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Image</th>
-        </tr>
-
-        <tr>
-            <td>{{row[0]}}</td>
-        </tr>
-        <tr>
-            <td>{{row[1]}}</td>
-        </tr>
-        <tr>
-            <td>{{row[2]}}</td>
-        </tr>
-        <tr>
-            <td>{{row[3]}}</td>
-        </tr>
-        
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image</th>
+    </tr>
+    {% for i in range(names|length) %}
+    <tr>
+        <td>{{ names[i] }}</td>
+        <td>{{ descs[i] }}</td>
+        <td><img src="{{ img_uris[i] }}" alt="images"></td>
+    </tr>
+    {% endfor %}
     {% endblock %}
-
+    
     {% block footer %}
     {% endblock %}
-

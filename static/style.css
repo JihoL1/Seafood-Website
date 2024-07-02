@@ -23,6 +23,15 @@ body{
     height: 100%;
 }
 
+.header_logo{
+    width: 30%;
+    border-radius: 10px;
+}
+
+.header_logo:hover{
+    background-color: #00728b;
+}
+
 .nav{
     width: 100%;
     background-color: #00a7cc;
@@ -34,7 +43,7 @@ body{
     padding: 10px;
     color: black;
     text-decoration: none;
-    font-size: 0.8vw;
+    font-size: 1vw;
     width: 10%;
     text-align: center;
 }
@@ -47,25 +56,64 @@ body{
     background-color: #00708a;
 }
 
-.textbox{
-    width: 96%;
-    padding: 4%;
-    background-color: white;
-    font-size: 0.7vw;
-    text-align: left;
-    margin: 2%;
+/* screen resolution change */
+@media screen and (max-width: 800px) {
+    .nav a{
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
 }
 
 .column{
     float: left;
-    width: 25%;
-    padding: 2%;
+    width: 12.5%;
+    padding: 10px;
 }
 
 .row::after{
     content: "";
     clear: both;
     display: table;
+}
+
+/* automatic slideshow */
+.slide{display: none;}
+
+.slideshow_container{
+    max-width:1250px;
+    position: relative;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.article{
+    max-width: 610px;
+    position: relative;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.5;}
+    to {opacity: 1;}
+}
+
+figcaption {
+    text-align: center;
+    font-size: 1.2vw;
 }
 
 .section{
@@ -103,8 +151,10 @@ td,th{
     border: 1px solid #002131;
     text-align: left;
     padding: 5px;
+    width: 25%;
 }
 
 tr:nth-child(even){
     background-color: #0078b4;
 }
+

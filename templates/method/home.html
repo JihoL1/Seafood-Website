@@ -4,7 +4,7 @@
 {% endblock %}
 
     {% block header %}
-        <h1>Logo</h1>
+        <a href="/"><img src="/static/images/logo.png" alt="Logo" class="header_logo"></a>
     {% endblock %}
 
     {% block nav %}
@@ -18,24 +18,71 @@
         <a href="/barbecuing">Barbecuing</a>
         <a href="/boiling">Boiling</a>
     {% endblock %}
-    
-    {% block textbox %}
+
+    {% block container %}
+        <div class="slide fade">
+            <img src="/static/images/1250x 750.png" alt="slideimg" style="width: 100%;">
+        </div>
+
+        <div class="slide fade">
+            <img src="/static/images/1250x 750.png" alt="slideimg" style="width: 100%;">
+        </div>
+
+        <div class="slide fade">
+            <img src="/static/images/1250x 750.png" alt="slideimg" style="width: 100%;">
+        </div>
+
+        <div class="slide fade">
+            <img src="/static/images/1250x 750.png" alt="slideimg" style="width: 100%;">
+        </div>
+
+        <div class="slide fade">
+            <img src="/static/images/1250x 750.png" alt="slideimg" style="width: 100%;">
+        </div>
+    {% endblock %}
+
+    {% block article %}
+        <img src="/static/images/610x 750.png" alt="hold">
     {% endblock %}
 
     {% block row %}
         <div class="column">
-            <img src="/static/images/placeholder.png" alt="steaming" href="/steaming" style="width:100%;">
+            <a href="/steaming"><img src="/static/images/placeholder.png" alt="steaming" style="width:100%;"></a>
+            <figcaption>Steaming</figcaption>
         </div>
         <div class="column">
-            <img src="/static/images/placeholder.png" alt="frying" href="/frying" style="width:100%;">
+            <a href="/frying"><img src="/static/images/placeholder.png" alt="frying" style="width:100%;"></a>
+            <figcaption>Frying</figcaption>
         </div>
         <div class="column">
-            <img src="/static/images/placeholder.png" alt="raw" href="/raw" style="width:100%;">
+            <a href="/raw"><img src="/static/images/placeholder.png" alt="raw" style="width:100%;"></a>
+            <figcaption>Raw</figcaption>
         </div>
         <div class="column">
-            <img src="/static/images/placeholder.png" alt="grilling" href="/grilling" style="width:100%;">
+            <a href="/grilling"><img src="/static/images/placeholder.png" alt="grilling" style="width:100%;"></a>
+            <figcaption>Grilling</figcaption>
+        </div>
+        <div class="column">
+            <a href="/baking"><img src="/static/images/placeholder.png" alt="baking" style="width:100%;"></a>
+            <figcaption>Baking</figcaption>
+        </div>
+        <div class="column">
+            <a href="/poaching"><img src="/static/images/placeholder.png" alt="poaching" style="width:100%;"></a>
+            <figcaption>Poaching</figcaption>
+        </div>
+        <div class="column">
+            <a href="/barbecuing"><img src="/static/images/placeholder.png" alt="barbecuing" style="width:100%;"></a>
+            <figcaption>Barbecuing</figcaption>
+        </div>
+        <div class="column">
+            <a href="/boiling"><img src="/static/images/placeholder.png" alt="boiling" style="width:100%;"></a>
+            <figcaption>Boiling</figcaption>
         </div>
     {% endblock %}
 
+
     {% block footer %}
     {% endblock %}
+
+
+    

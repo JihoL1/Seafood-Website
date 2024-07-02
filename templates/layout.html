@@ -4,16 +4,19 @@
     {% block head %}
     <title>{% block title %}Seafood{% endblock %}</title>
     <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js"></script>
     {% endblock %}
 </head>
 
-<body>
+<body onload="slides()">{% block body %}
 
     <div class="header">{% block header %}{% endblock %}</div>
 
     <div class="nav">{% block nav %}{% endblock %}</div>
+    
+    <div class="slideshow_container">{% block container %}{% endblock %}</div>
 
-    <div class="textbox">{% block textbox %}{% endblock %}</div>
+    <div class="article">{% block article %}{% endblock %}</div>
 
     <div class="row">{% block row %}{% endblock %}</div>
 
@@ -23,7 +26,6 @@
 
     <div class="footer">{% block footer %}{% endblock %}</div> 
 
-
-    
+{% endblock %}
 </body>
 </html>

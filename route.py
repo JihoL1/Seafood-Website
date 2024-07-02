@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import sqlite3
+import base64
 db = 'seafood.db'
 app = Flask(__name__)
 
@@ -10,15 +11,28 @@ def homepage():
     return render_template('/method/home.html')
 
 
-#steaming
 @app.route('/steaming')
 def steaming():
+    conn = sqlite3.connect(db)
+    cur = conn.cursor()
+    cur.execute('SELECT blob_image FROM Images WHERE method = 1')
+    image_data = cur.fetchall()
+    conn.close()
+
+    img_uris = []
+    for data in image_data:
+        imgbase64 = base64.b64encode(data[0]).decode('utf-8')
+        img_uri = f"data:image/png;base64,{imgbase64}"
+        img_uris.append(img_uri)
 
     conn = sqlite3.connect(db)
     cur = conn.cursor()
-    for row in cur.execute('SELECT name, description, image FROM Seafood WHERE method ="1"'):
-        row = cur.fetchall()
-        return render_template('/method/steaming.html', row=row)
+    cur.execute('SELECT name, description FROM Seafood WHERE method = 1')
+    row = cur.fetchall()
+    conn.close()
+
+    names, descs = zip(*row) if row else ([], [])
+    return render_template('/method/steaming.html', names=names, descs=descs, img_uris=img_uris)
 
 
 #frying
