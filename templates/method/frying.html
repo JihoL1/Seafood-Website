@@ -29,11 +29,13 @@
         <th>Image</th>
     </tr>
 
+    {% for i in range(names|length) %}
     <tr>
-        <td>{{frying[1]}}</td>
-        <td>{{frying[4]}}</td>
-        <td>{{frying[5]}}</td>
+        <td>{{ names[i] }}</td>
+        <td>{{ descs[i] }}</td>
+        <td><img src="{{ img_uris[i] }}" alt="images"></td>
     </tr>
+    {% endfor %}
     {% endblock %}
 
     {% block footer %}

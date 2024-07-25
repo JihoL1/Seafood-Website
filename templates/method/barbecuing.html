@@ -22,7 +22,20 @@
     {% block textbox %}
     {% endblock %}
 
-    {% block footer %}
+    {% block table %}
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image</th>
+    </tr>
+    {% for i in range(names|length) %}
+    <tr>
+        <td>{{ names[i] }}</td>
+        <td>{{ descs[i] }}</td>
+        <td><img src="{{ img_uris[i] }}" alt="images"></td>
+    </tr>
+    {% endfor %}
     {% endblock %}
 
-{{barbecuing[1]}}
+    {% block footer %}
+    {% endblock %}
