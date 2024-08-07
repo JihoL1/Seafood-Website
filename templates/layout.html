@@ -23,12 +23,12 @@
     <div class="slideshow_container">{% block container %}{% endblock %}</div>
 
     <!-- textbox for the homepage next to the slideshow -->
-    <div class="article">{% block article %}{% endblock %}</div>
+    <div class="slide_article">{% block article %}{% endblock %}</div>
 
-    <!-- allign column in a line -->
-    <div class="row">{% block row %}{% endblock %}</div>
+    <!-- slicer between slideshow and method writings -->
+    <div class="slice" style="width: 100%;">{% block slice %}{% endblock %}</div>
 
-    <!-- image links below the slideshow -->
+    <!-- methods listing under the homepage slideshow -->
     <div class="column">{% block column %}{% endblock %}</div>
 
     <table>{% block table %}{% endblock %}</table>

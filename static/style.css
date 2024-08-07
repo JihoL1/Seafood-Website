@@ -56,7 +56,7 @@ body{
     background-color: #00708a;
 }
 
-/* screen resolution change */
+/* navigation bar change if screen resolution changed smaller */
 @media screen and (max-width: 800px) {
     .nav a{
         float: none;
@@ -70,21 +70,24 @@ body{
 
 .column{
     float: left;
-    width: 12.5%;
-    padding: 10px;
+    width: 100%;
 }
 
-.row::after{
-    content: "";
-    clear: both;
-    display: table;
+.slice{
+    float: left;
+    margin: 10px;
+    padding: 20px;
+    max-width: 1880px;
+    width: 100%;
+    background-color: #00a7cc;
+    font-size: 4vw;
 }
 
 /* automatic slideshow */
 .slide{display: none;}
 
 .slideshow_container{
-    max-width:1250px;
+    max-width:1240px;
     position: relative;
     float: left;
     margin-top: 10px;
@@ -92,13 +95,32 @@ body{
     margin-right: 10px;
 }
 
-.article{
-    max-width: 610px;
+.slide_article{
+    max-width: 630px;
+    position: relative;
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+.image_container{
+    max-width: 1000px;
     position: relative;
     float: left;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.method_article {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 860px;
+    margin-bottom: 4vw;
 }
 
 .fade {
@@ -133,10 +155,6 @@ figcaption {
     width: 100%;
 }
 
-h1{
-    font-size: 2.2vw;
-}
-
 table{
     font-family: serif;
     width: 90%;
@@ -158,3 +176,13 @@ tr:nth-child(even){
     background-color: #0078b4;
 }
 
+/* text resizing */
+h1{
+    padding: 10px;
+    font-size: 2.0vw;
+    background-color: #00a7cc;
+}
+
+p{
+    font-size: 1.6vw;
+}

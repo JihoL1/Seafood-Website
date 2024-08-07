@@ -30,9 +30,9 @@
     </tr>
     {% for i in range(names|length) %}
     <tr>
-        <td>{{ names[i] }}</td>
-        <td>{{ descs[i] }}</td>
-        <td><img src="{{ img_uris[i] }}" alt="images"></td>
+        <td><h1>{{ names[i] }}</h1></td>
+        <td><p>{{ descs[i] }}</p></td>
+        <td><img src="{{ img[i] }}" alt="images"></td>
     </tr>
     {% endfor %}
     {% endblock %}

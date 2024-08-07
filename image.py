@@ -1,4 +1,4 @@
-#encode image as base64 and store it in database
+# encode image as base64 and store it in database
 import base64
 import sqlite3
 

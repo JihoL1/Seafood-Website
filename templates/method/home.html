@@ -3,10 +3,12 @@
     {{super() }}
 {% endblock %}
 
+    <!-- header -->
     {% block header %}
         <a href="/"><img src="/static/images/logo.png" alt="Logo" class="header_logo"></a>
     {% endblock %}
 
+    <!-- navigation bar -->
     {% block nav %}
         <a href="/" class="active">Home</a>
         <a href="/steaming">Steaming</a>
@@ -19,69 +21,156 @@
         <a href="/boiling">Boiling</a>
     {% endblock %}
 
+    <!-- automatic slideshow -->
     {% block container %}
+        <!-- slide 1 -->
         <div class="slide fade">
-            <img src="/static/images/1250x 750.png" alt="slideimg" style="width: 100%;">
+            <img src="/static/images/slide1.png" alt="steaming" style="width: 100%;">
         </div>
-
+        <!-- slide 2 -->
         <div class="slide fade">
-            <img src="/static/images/1250x 750.png" alt="slideimg" style="width: 100%;">
+            <img src="/static/images/slide2.png" alt="frying" style="width: 100%;">
         </div>
-
+        <!-- slide 3 -->
         <div class="slide fade">
-            <img src="/static/images/1250x 750.png" alt="slideimg" style="width: 100%;">
+            <img src="/static/images/slide3.png" alt="raw" style="width: 100%;">
         </div>
-
+        <!-- slide 4 -->
         <div class="slide fade">
-            <img src="/static/images/1250x 750.png" alt="slideimg" style="width: 100%;">
+            <img src="/static/images/slide4.png" alt="grilling" style="width: 100%;">
         </div>
-
+        <!-- slide 5 -->
         <div class="slide fade">
-            <img src="/static/images/1250x 750.png" alt="slideimg" style="width: 100%;">
+            <img src="/static/images/slide5.png" alt="baking" style="width: 100%;">
+        </div>
+        <!-- slide 6 -->
+        <div class="slide fade">
+            <img src="/static/images/slide6.png" alt="poaching" style="width: 100%;">
+        </div>
+        <!-- slide 7 -->
+        <div class="slide fade">
+            <img src="/static/images/slide7.png" alt="barbecuing" style="width: 100%;">
+        </div>
+        <!-- slide 8 -->
+        <div class="slide fade">
+            <img src="/static/images/slide8.png" alt="boiling" style="width: 100%;">
         </div>
     {% endblock %}
 
-
+    <!-- slideshow textbox -->
     {% block article %}
-        <img src="/static/images/630x 750.png" alt="text">
+        <h1>Seafood</h1>
+        <p>Seafoods are food cooked using aquatic animals such as fishes, shellfishes, crustaceans, etc.</p>
+        <p>Eating seafood provide benefits to us, for example, fishes are including omega-3 acid which support heart health, lowering blood pressure, reduces health risks with vitamin D and B2, which provide support on overall health, immunity and skin care.</p>
+        <p>Seafoods also provide high protein with good amount of fats.</p>
+        <p>In this website, there will be images and info of seafoods which are cooked in eight different methods.</p>
+        <p>These methods are: steaming, frying, raw, grilling, baking, poaching, barbecuing and boiling.</p>
     {% endblock %}
 
-    {% block row %}
-        <div class="column">
-            <a href="/steaming"><img src="/static/images/placeholder.png" alt="steaming" style="width:100%;"></a>
-            <figcaption>Steaming</figcaption>
+    {% block slice %}
+        <b>Methods:</b>
+    {% endblock %}
+
+    {% block column %}
+        <!-- steam image container -->
+        <div class="image_container">
+            <img src="/static/images/method1.png" alt="Steaming_img" style="width: 100%;">
+        </div> 
+        <!-- steam textbox -->
+        <div class="method_article">
+            <h1>Steaming</h1>
+            <p>Steaming is a method of cooking with steam. This method is done by putting food over the boiling water, boiling water continues to vaporize into steam and these steams are
+                carrying heat to food over water to heat them up.</p>
+            <p>Benefits of this method are, it is able to avoid burning or overcooking foods. Steaming also loses less nutrients inside the foods, compared to other method using water to cook.</p>
+            <p>This method is also quick and does not require high cost for cooking while it does not require hard process for cooking.</p>
         </div>
-        <div class="column">
-            <a href="/frying"><img src="/static/images/placeholder.png" alt="frying" style="width:100%;"></a>
-            <figcaption>Frying</figcaption>
+
+        <!-- fried image container -->
+        <div class="image_container">
+            <img src="/static/images/method2.png" alt="Frying_img" style="width: 100%;">
+        </div>  
+        <!-- fried textbox -->
+        <div class="method_article">
+            <h1>Frying</h1>
+            <p>Frying is a method of cooking with oil or fat. This method is done by putting food inside the boiling oil or fat and heating it until it is cooked.</p>
+            <p>This method has many variations such as stir-frying, pan frying, deep frying and air frying. Benefits of frying are being able to cook food fast while having good taste and textures.</p>
+            <p>Cooking in the oil or fat may cause lose of nutrients inside food and may cause problems in human body when consumed too much, these foods also have high calories which may lead to negative effects.</p>
         </div>
-        <div class="column">
-            <a href="/raw"><img src="/static/images/placeholder.png" alt="raw" style="width:100%;"></a>
-            <figcaption>Raw</figcaption>
+
+        <!-- raw image container -->
+        <div class="image_container">
+            <img src="/static/images/method3.png" alt="Raw_img" style="width: 100%;">
         </div>
-        <div class="column">
-            <a href="/grilling"><img src="/static/images/placeholder.png" alt="grilling" style="width:100%;"></a>
-            <figcaption>Grilling</figcaption>
+        <!-- raw textbox -->
+        <div class="method_article">
+            <h1>Raw</h1>
+            <p>Raw is a method of eating food which are not cooked or has not taken any process.</p>
+            <p>Benefits of eating raw seafoods are it is able to avoid consuming toxins that are produced from heating the food and consuming more nutrients then other methods due to less lose of nutrients from cooking.</p>
+            <p>It requires care while eating these foods due to it being able to cause food poisoing and some other diseases that may cause from consuming raw seafoods.</p>
         </div>
-        <div class="column">
-            <a href="/baking"><img src="/static/images/placeholder.png" alt="baking" style="width:100%;"></a>
-            <figcaption>Baking</figcaption>
+
+        <!-- grilling image container -->
+        <div class="image_container">
+            <img src="/static/images/method4.png" alt="Grilling_img" style="width: 100%;">
         </div>
-        <div class="column">
-            <a href="/poaching"><img src="/static/images/placeholder.png" alt="poaching" style="width:100%;"></a>
-            <figcaption>Poaching</figcaption>
+        <!-- grilling textbox -->
+        <div class="method_article">
+            <h1>Grilling</h1>
+            <p>Grilling is a method of cooking with applying heat on surface of food. This method requires heat to applied directly on the surface of the food from the fire.</p>
+            <p>This method has some beneficial effects in nutrients, through being grilled, food may add some nutrients that are only able to be gained from grilling.</p>
+            <p>During process of cooking these foods, it may produce chemicals which are harmful for human body.</p>
         </div>
-        <div class="column">
-            <a href="/barbecuing"><img src="/static/images/placeholder.png" alt="barbecuing" style="width:100%;"></a>
-            <figcaption>Barbecuing</figcaption>
+
+        <!-- baking image container -->
+        <div class="image_container">
+            <img src="/static/images/method5.png" alt="Baking_img" style="width: 100%;">
         </div>
-        <div class="column">
-            <a href="/boiling"><img src="/static/images/placeholder.png" alt="boiling" style="width:100%;"></a>
-            <figcaption>Boiling</figcaption>
+        <!-- baking textbox -->
+        <div class="method_article">
+            <h1>Baking</h1>
+            <p>Baking is a method of cooking with dry heat, this method usually uses oven for cooking, but hot ashes or stones are also be able to use this method.</p>
+            <p>This method does not loses much nutrients inside food while making proteins easier to digest through the process of cooking and baked foods are mostly low in fat due to less oil use for cooking.</p>
+            <p>Baked foods have textures like fried foods but is more healthier compared to the fried foods.</p>
+        </div>
+
+        <!-- poaching image container -->
+        <div class="image_container">
+            <img src="/static/images/method6.png" alt="Poaching_img" style="width: 100%;">
+        </div>
+        <!-- poaching textbox -->
+        <div class="method_article">
+            <h1>Poaching</h1>
+            <p>Poaching is a method of cooking by heating food while being in liquid such as water, milk, wine. This method cooks food in lower temperature compared to other method using liquid.</p>
+            <p>This method is good for preventing such food as egg or fish from falling apart due to boiling water.</p>
+            <p>Benefit of poaching is this method is good for food with low fat and high nutrients. This method also provides soft and juicy texture for foods.</p>
+        </div>
+
+        <!-- barbecuing image container -->
+        <div class="image_container">
+            <img src="/static/images/method7.png" alt="Barbecuing_img" style="width: 100%;">
+        </div>
+        <!-- barbecuing textbox -->
+        <div class="method_article">
+            <h1>Barbecuing</h1>
+            <p>Barbecuing is a method of cooking by employing fire and smoke to cook food over the wood or charcoal. Grilling and barbecuing are pretty similar method of cooking but the difference is grilling is fast cooking while barbecuing is slow cooking.</p>
+            <p>This method is reducing fat of food this is because fats are dropped off while cooking with this method. This method also saves more nutrients within food compared to normal grilling.</p>
+            <p>Due to food being heated, it could produce chemicals that are capable of harming human body.</p>
+        </div>
+
+        <!-- boiling image container -->
+        <div class="image_container">
+            <img src="/static/images/method8.png" alt="Boiling_img" style="width: 100%;">
+        </div>
+        <!-- boiling textbox -->
+        <div class="method_article">
+            <h1>Boiling</h1>
+            <p>Boiling is a method of cooking by putting foods inside boiling liquid such as water or milk. This method is simple and easy to do since it does not require much processes compared to other cooking methods.</p>
+            <p>It is also beneficial in nutrients because it improves and keeps nutrients inside food while destroying harmful sources that could harm human body.</p>
+            <p>Because of safety and benefits of it, this method is being widely used for cooking.</p>
         </div>
     {% endblock %}
 
-
+    <!-- footer -->
     {% block footer %}
     {% endblock %}
 

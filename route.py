@@ -14,26 +14,41 @@ def homepage():
 # steaming
 @app.route('/steaming')
 def steaming():
+    # connect to database
     conn = sqlite3.connect(db)
+    # create cursor
     cur = conn.cursor()
+    # execute sql query to get image from database
     cur.execute('SELECT blob_image FROM Images WHERE method = 1')
+    # get all results from the query
     image_data = cur.fetchall()
+    # close connection
     conn.close()
-
-    img_uris = []
+    # process to get image from sql into html using base64
+    img = []
     for data in image_data:
+        # encode and decode the image with base64
         imgbase64 = base64.b64encode(data[0]).decode('utf-8')
         img_uri = f"data:image/png;base64,{imgbase64}"
-        img_uris.append(img_uri)
+        # add img_uri to the listR
+        img.append(img_uri)
 
+    # connect to database
     conn = sqlite3.connect(db)
+    # create cursor
     cur = conn.cursor()
+    # execute sql query to get name and description
     cur.execute('SELECT name, description FROM Seafood WHERE method = 1')
+    # get all results from the query
     row = cur.fetchall()
+    # close connection
     conn.close()
 
     names, descs = zip(*row) if row else ([], [])
-    return render_template('/method/steaming.html', names=names, descs=descs, img_uris=img_uris)
+    # return executed results into steaming.html file
+    return render_template('/method/steaming.html',
+                           names=names, descs=descs, img=img)
+
 
 # frying
 @app.route('/frying')
@@ -44,11 +59,11 @@ def frying():
     image_data = cur.fetchall()
     conn.close()
 
-    img_uris = []
+    img = []
     for data in image_data:
         imgbase64 = base64.b64encode(data[0]).decode('utf-8')
         img_uri = f"data:image/png;base64,{imgbase64}"
-        img_uris.append(img_uri)
+        img.append(img_uri)
 
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -57,11 +72,12 @@ def frying():
     conn.close()
 
     names, descs = zip(*row) if row else ([], [])
-    return render_template('/method/frying.html', names=names, descs=descs, img_uris=img_uris)
+    return render_template('/method/frying.html',
+                           names=names, descs=descs, img=img)
 
 
 # raw
-@app.route('/raw') 
+@app.route('/raw')
 def raw():
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -69,11 +85,11 @@ def raw():
     image_data = cur.fetchall()
     conn.close()
 
-    img_uris = []
+    img = []
     for data in image_data:
         imgbase64 = base64.b64encode(data[0]).decode('utf-8')
         img_uri = f"data:image/png;base64,{imgbase64}"
-        img_uris.append(img_uri)
+        img.append(img_uri)
 
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -82,11 +98,12 @@ def raw():
     conn.close()
 
     names, descs = zip(*row) if row else ([], [])
-    return render_template('/method/raw.html', names=names, descs=descs, img_uris=img_uris)
+    return render_template('/method/raw.html',
+                           names=names, descs=descs, img=img)
 
 
 # grilling
-@app.route('/grilling')  
+@app.route('/grilling')
 def grilling():
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -94,11 +111,11 @@ def grilling():
     image_data = cur.fetchall()
     conn.close()
 
-    img_uris = []
+    img = []
     for data in image_data:
         imgbase64 = base64.b64encode(data[0]).decode('utf-8')
         img_uri = f"data:image/png;base64,{imgbase64}"
-        img_uris.append(img_uri)
+        img.append(img_uri)
 
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -107,11 +124,12 @@ def grilling():
     conn.close()
 
     names, descs = zip(*row) if row else ([], [])
-    return render_template('/method/grilling.html', names=names, descs=descs, img_uris=img_uris)
+    return render_template('/method/grilling.html',
+                           names=names, descs=descs, img=img)
 
 
 # baking
-@app.route('/baking')  
+@app.route('/baking')
 def baking():
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -119,11 +137,11 @@ def baking():
     image_data = cur.fetchall()
     conn.close()
 
-    img_uris = []
+    img = []
     for data in image_data:
         imgbase64 = base64.b64encode(data[0]).decode('utf-8')
         img_uri = f"data:image/png;base64,{imgbase64}"
-        img_uris.append(img_uri)
+        img.append(img_uri)
 
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -132,11 +150,12 @@ def baking():
     conn.close()
 
     names, descs = zip(*row) if row else ([], [])
-    return render_template('/method/baking.html', names=names, descs=descs, img_uris=img_uris)
+    return render_template('/method/baking.html',
+                           names=names, descs=descs, img=img)
 
 
 # poaching
-@app.route('/poaching')  
+@app.route('/poaching')
 def poaching():
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -144,11 +163,11 @@ def poaching():
     image_data = cur.fetchall()
     conn.close()
 
-    img_uris = []
+    img = []
     for data in image_data:
         imgbase64 = base64.b64encode(data[0]).decode('utf-8')
         img_uri = f"data:image/png;base64,{imgbase64}"
-        img_uris.append(img_uri)
+        img.append(img_uri)
 
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -157,11 +176,12 @@ def poaching():
     conn.close()
 
     names, descs = zip(*row) if row else ([], [])
-    return render_template('/method/poaching.html', names=names, descs=descs, img_uris=img_uris)
+    return render_template('/method/poaching.html',
+                           names=names, descs=descs, img=img)
 
 
 # barbecuing
-@app.route('/barbecuing')  
+@app.route('/barbecuing')
 def barbecuing():
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -169,11 +189,11 @@ def barbecuing():
     image_data = cur.fetchall()
     conn.close()
 
-    img_uris = []
+    img = []
     for data in image_data:
         imgbase64 = base64.b64encode(data[0]).decode('utf-8')
         img_uri = f"data:image/png;base64,{imgbase64}"
-        img_uris.append(img_uri)
+        img.append(img_uri)
 
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -182,11 +202,12 @@ def barbecuing():
     conn.close()
 
     names, descs = zip(*row) if row else ([], [])
-    return render_template('/method/barbecuing.html', names=names, descs=descs, img_uris=img_uris)
+    return render_template('/method/barbecuing.html',
+                           names=names, descs=descs, img=img)
 
 
 # boiling
-@app.route('/boiling')  
+@app.route('/boiling')
 def boiling():
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -194,11 +215,11 @@ def boiling():
     image_data = cur.fetchall()
     conn.close()
 
-    img_uris = []
+    img = []
     for data in image_data:
         imgbase64 = base64.b64encode(data[0]).decode('utf-8')
         img_uri = f"data:image/png;base64,{imgbase64}"
-        img_uris.append(img_uri)
+        img.append(img_uri)
 
     conn = sqlite3.connect(db)
     cur = conn.cursor()
@@ -207,7 +228,8 @@ def boiling():
     conn.close()
 
     names, descs = zip(*row) if row else ([], [])
-    return render_template('/method/boiling.html', names=names, descs=descs, img_uris=img_uris)
+    return render_template('/method/boiling.html',
+                           names=names, descs=descs, img=img)
 
 
 if __name__ == "__main__":
