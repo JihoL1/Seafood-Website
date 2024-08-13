@@ -76,11 +76,8 @@ body{
 .slice{
     float: left;
     margin: 10px;
-    padding: 20px;
     max-width: 1880px;
     width: 100%;
-    background-color: #00a7cc;
-    font-size: 4vw;
 }
 
 /* automatic slideshow */
@@ -123,6 +120,24 @@ body{
     margin-bottom: 4vw;
 }
 
+.seafood_container{
+    max-width: 1000px;
+    position: relative;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 4vw;
+}
+
+.seafood_article {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 860px;
+}
+
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
@@ -131,11 +146,6 @@ body{
 @keyframes fade {
     from {opacity: 0.5;}
     to {opacity: 1;}
-}
-
-figcaption {
-    text-align: center;
-    font-size: 1.2vw;
 }
 
 .section{
@@ -153,6 +163,8 @@ figcaption {
     font-size: 1.0vw;
     padding: 10px;
     width: 100%;
+    bottom: 0;
+    position: fixed;
 }
 
 table{
@@ -178,11 +190,18 @@ tr:nth-child(even){
 
 /* text resizing */
 h1{
-    padding: 10px;
-    font-size: 2.0vw;
+    padding: 1vw;
+    font-size: 2.1vw;
+    background-color: #00a7cc;
+}
+
+h2{
+    padding: 1vw;
+    font-size: 1.9vw;
     background-color: #00a7cc;
 }
 
 p{
     font-size: 1.6vw;
+    padding: 5px;
 }

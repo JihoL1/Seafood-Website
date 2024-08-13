@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <title>{% block title %}Seafood{% endblock %}</title>
+    <!-- connect to external css file -->
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- connect to external javascript file -->
+    <script src="/static/script.js"></script>
+    {% endblock %}
+</head>
+
+<!-- start function slides on load of the website -->
+<body onload="slides()">{% block body %}
+
+    <!-- header of the website -->
+    <div class="header">{% block header %}{% endblock %}</div>
+
+    <!-- navigation bar -->
+    <div class="nav">{% block nav %}{% endblock %}</div>
+
+    <!-- container for the slideshow in the homepage -->
+    <div class="slideshow_container">{% block container %}{% endblock %}</div>
+
+    <!-- textbox for the homepage next to the slideshow -->
+    <div class="slide_article">{% block article %}{% endblock %}</div>
+
+    <!-- slicer between slideshow and method writings -->
+    <div class="slice" style="width: 100%;">{% block slice %}{% endblock %}</div>
+
+    <!-- methods listing under the homepage slideshow -->
+    <div class="column">{% block column %}{% endblock %}</div>
+
+    <!-- footer at the bottom of the website -->
+    <div class="footer">{% block footer %}{% endblock %}</div> 
+
+{% endblock %}
+</body>
+</html>

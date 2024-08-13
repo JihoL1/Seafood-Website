@@ -30,7 +30,7 @@ def steaming():
         # encode and decode the image with base64
         imgbase64 = base64.b64encode(data[0]).decode('utf-8')
         img_uri = f"data:image/png;base64,{imgbase64}"
-        # add img_uri to the listR
+        # add img_uri to the list
         img.append(img_uri)
 
     # connect to database

@@ -13,3 +13,4 @@ function slides() {
     /* change slide every 4 seconds */
     setTimeout(slides, 4000);
 } 
+

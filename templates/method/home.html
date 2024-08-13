@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'home_layout.html' %}
 {% block head %}
     {{super() }}
 {% endblock %}
@@ -60,15 +60,17 @@
     <!-- slideshow textbox -->
     {% block article %}
         <h1>Seafood</h1>
-        <p>Seafoods are food cooked using aquatic animals such as fishes, shellfishes, crustaceans, etc.</p>
+        <p>Seafoods are food cooked using aquatic animals and plants such as fishes, shellfishes, crustaceans, seaweed.</p>
         <p>Eating seafood provide benefits to us, for example, fishes are including omega-3 acid which support heart health, lowering blood pressure, reduces health risks with vitamin D and B2, which provide support on overall health, immunity and skin care.</p>
         <p>Seafoods also provide high protein with good amount of fats.</p>
-        <p>In this website, there will be images and info of seafoods which are cooked in eight different methods.</p>
-        <p>These methods are: steaming, frying, raw, grilling, baking, poaching, barbecuing and boiling.</p>
     {% endblock %}
 
     {% block slice %}
-        <b>Methods:</b>
+        <h1>About this website</h1>
+        <p>In this website, there will be images and information of seafoods which are cooked in eight different methods from lots of different countries.</p>
+        <p>These methods are: steaming, frying, raw, grilling, baking, poaching, barbecuing and boiling.</p>
+
+        <h1>Methods:</h1>
     {% endblock %}
 
     {% block column %}

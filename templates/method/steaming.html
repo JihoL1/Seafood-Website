@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'section_layout.html' %}
 {% block head %}
     {{super() }}
 {% endblock %}
@@ -18,22 +18,22 @@
         <a href="/barbecuing">Barbecuing</a>
         <a href="/boiling">Boiling</a>
     {% endblock %}
-    
-    {% block textbox %}
 
+    {% block slice %}
+        <h1>Steaming</h1>
+        <p>These are seafood dishes cooked using steaming method, each of these seafoods are from each different countries around the world.</p>
+        <p>This section will include images and information of each different seafoods that are cooked using steams.</p>
     {% endblock %}
-    {% block table %}
-    <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Image</th>
-    </tr>
+
+    {% block column %}
     {% for i in range(names|length) %}
-    <tr>
-        <td><h1>{{ names[i] }}</h1></td>
-        <td><p>{{ descs[i] }}</p></td>
-        <td><img src="{{ img[i] }}" alt="images"></td>
-    </tr>
+        <div class="seafood_article">
+            <h2>{{ names[i] }}</h2>
+            <p>{{ descs[i] }}</p>
+        </div>
+        <div class="seafood_container">
+            <img src="{{ img[i] }}" alt="images">
+        </div>
     {% endfor %}
     {% endblock %}
     
