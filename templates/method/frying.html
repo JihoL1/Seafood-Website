@@ -19,26 +19,23 @@
         <a href="/boiling">Boiling</a>
     {% endblock %}
     
-    {% block textbox %}
+    {% block slice %}
+        <h1>Frying</h1>
+        <p>These seafood dishes are cooked using frying method and are originated from different countries.</p>
+        <p>This section is including images of few fried seafood dishes with their informations about them.</p>
     {% endblock %}
 
-    {% block table %}
-    <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Image</th>
-    </tr>
-
+    {% block column %}
     {% for i in range(names|length) %}
-    <tr>
-        <td>{{ names[i] }}</td>
-        <td>{{ descs[i] }}</td>
-        <td><img src="{{ img[i] }}" alt="images"></td>
-    </tr>
+        <div class="seafood_article">
+            <h2>{{ names[i] }}</h2>
+            <p>{{ descs[i] }}</p>
+        </div>
+        <div class="seafood_container">
+            <img src="{{ img[i] }}" alt="images">
+        </div>
     {% endfor %}
     {% endblock %}
 
     {% block footer %}
     {% endblock %}
-
-{{frying[1]}}

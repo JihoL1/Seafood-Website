@@ -19,21 +19,21 @@
         <a href="/boiling" class="active">Boiling</a>
     {% endblock %}
     
-    {% block textbox %}
+    {% block slice %}
+        <h1></h1>
+        <p></p>
+        <p></p>
     {% endblock %}
 
-    {% block table %}
-    <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Image</th>
-    </tr>
+    {% block column %}
     {% for i in range(names|length) %}
-    <tr>
-        <td>{{ names[i] }}</td>
-        <td>{{ descs[i] }}</td>
-        <td><img src="{{ img[i] }}" alt="images"></td>
-    </tr>
+        <div class="seafood_article">
+            <h2>{{ names[i] }}</h2>
+            <p>{{ descs[i] }}</p>
+        </div>
+        <div class="seafood_container">
+            <img src="{{ img[i] }}" alt="images">
+        </div>
     {% endfor %}
     {% endblock %}
 
