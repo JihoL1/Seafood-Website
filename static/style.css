@@ -167,6 +167,22 @@ body{
     position: fixed;
 }
 
+button{
+    padding: 0.8vw;
+    font-size: 1.4vw;
+    text-decoration: none;
+    text-align: center;
+    font-family: serif;
+    border: 2px solid black;
+    color: black;
+    margin: 1vw;
+}
+
+button:hover{
+    background-color: grey;
+    cursor: pointer;
+}
+
 table{
     font-family: serif;
     width: 90%;

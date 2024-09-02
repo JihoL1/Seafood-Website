@@ -238,7 +238,8 @@ def get_random_image():
     conn = sqlite3.connect(db)
     cur = conn.cursor()
     cur.execute(
-        'SELECT blob_image, name FROM Images ORDER BY RANDOM() LIMIT 1')
+        '''SELECT blob_image, name,
+        description FROM Images ORDER BY RANDOM() LIMIT 1''')
     data = cur.fetchone()
     conn.close()
 
