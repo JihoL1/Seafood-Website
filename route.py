@@ -1,6 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file
 import sqlite3
 import base64
+import io
 db = 'seafood.db'
 app = Flask(__name__)
 
@@ -230,6 +231,38 @@ def boiling():
     names, descs = zip(*row) if row else ([], [])
     return render_template('/method/boiling.html',
                            names=names, descs=descs, img=img)
+
+
+# random image generator
+def get_random_image():
+    conn = sqlite3.connect(db)
+    cur = conn.cursor()
+    cur.execute(
+        'SELECT blob_image, name FROM Images ORDER BY RANDOM() LIMIT 1')
+    data = cur.fetchone()
+    conn.close()
+
+    if data:
+        img_data = io.BytesIO(data[0])
+        img_name = data[1]
+        return img_data, img_name
+    else:
+        return None, None
+
+
+@app.route('/index')
+def index():
+    img_data, img_name = get_random_image()
+    if img_data:
+        return send_file(img_data, mimetype='image/png', as_attachment=False,
+                         download_name=img_name)
+    else:
+        return "Not Found", 404
+
+
+@app.route('/random')
+def random_image():
+    return render_template('random.html')
 
 
 if __name__ == "__main__":

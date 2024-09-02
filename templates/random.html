@@ -12,31 +12,24 @@
         <a href="/steaming">Steaming</a>
         <a href="/frying">Frying</a>
         <a href="/raw">Raw</a>
-        <a href="/grilling" class="active">Grilling</a>
+        <a href="/grilling">Grilling</a>
         <a href="/baking">Baking</a>
         <a href="/poaching">Poaching</a>
         <a href="/barbecuing">Barbecuing</a>
         <a href="/boiling">Boiling</a>
-        <a href="/random">Random</a>
+        <a href="/random" class="active">Random</a>
     {% endblock %}
-    
+
     {% block slice %}
-        <h1>Grilling</h1>
-        <p>These are seafood dishes that are cooked by grilling. Each of these dishes are from different origins cooks foods in each different grilling method.</p>
-        <p>This section includes images of grilled seafood dishes with their informations next to each of them.</p>
+        <h1>Random Seafood Generator</h1>
     {% endblock %}
 
     {% block column %}
-    {% for i in range(names|length) %}
-        <div class="seafood_article">
-            <h2>{{ names[i] }}</h2>
-            <p>{{ descs[i] }}</p>
-        </div>
         <div class="seafood_container">
-            <img src="{{ img[i] }}" alt="images">
+            <img src="{{ url_for('index') }}" alt="Random_img">
         </div>
-    {% endfor %}
-    {% endblock %}
-
-    {% block footer %}
+        <div class="seafood_article">
+            <h2>Name</h2>
+            <p>Description</p>
+        </div>
     {% endblock %}
