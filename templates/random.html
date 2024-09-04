@@ -26,11 +26,12 @@
 
     {% block column %}
         <div class="seafood_container">
-            <img src="{{ url_for('index') }}" alt="Random_img">
+            <img src="{{ img_uri }}" alt="Random Image Generator" id="randomimage"/>
         </div>
         <div class="seafood_article">
-            <h2>Name</h2>
-            <p>Description</p>
+            <h2>{{ img_name }}</h2>
+            <p>{{ img_description }}</p>
+            <figcaption><a href="/random"><button>Generate Random Seafood</button></a></figcaption>
         </div>
-        <a href="/random"><button>Generate Random Seafood</button></a>
+        
     {% endblock %}

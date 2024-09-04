@@ -244,18 +244,20 @@ def get_random_image():
     conn.close()
 
     if data:
-        img_data = io.BytesIO(data[0])
+        img_data = base64.b64encode(data[0]).decode('utf-8')
         img_name = data[1]
-        return img_data, img_name
+        img_description = data[2]
+        return img_data, img_name, img_description
     else:
-        return None, None
+        return None, None, None
 
 
 @app.route('/index')
 def index():
-    img_data, img_name = get_random_image()
+    img_data, img_name, _ = get_random_image()
     if img_data:
-        return send_file(img_data, mimetype='image/png', as_attachment=False,
+        img_bytes = io.BytesIO(base64.b64encode(img_data))
+        return send_file(img_bytes, mimetype='image/png', as_attachment=False,
                          download_name=img_name)
     else:
         return "Not Found", 404
@@ -263,7 +265,14 @@ def index():
 
 @app.route('/random')
 def random_image():
-    return render_template('random.html')
+    img_data, img_name, img_description = get_random_image()
+    if img_data:
+        img_uri = f"data:image/png;base64,{img_data}"
+        return render_template('random.html', img_uri=img_uri,
+                               img_name=img_name,
+                               img_description=img_description)
+    else:
+        return "Not Found", 404
 
 
 if __name__ == "__main__":
