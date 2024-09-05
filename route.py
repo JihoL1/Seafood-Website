@@ -275,5 +275,15 @@ def random_image():
         return "Not Found", 404
 
 
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('404.html'), 404
+
+
+def create_app():
+    app.register_error_handler(404, not_found)
+    return app
+
+
 if __name__ == "__main__":
     app.run(debug=True)

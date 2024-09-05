@@ -12,5 +12,4 @@ function slides() {
     x[index-1].style.display = "block";
     /* change slide every 4 seconds */
     setTimeout(slides, 4000);
-} 
-
+}
